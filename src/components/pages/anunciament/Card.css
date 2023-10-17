@@ -1,0 +1,11 @@
+
+
+.card{
+    background-color:orange;
+}
+.card:hover + .buttom-card{
+    background-color:red;
+}
+.buttom-card{
+    background-color:var(--colorCard);
+}

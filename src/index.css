@@ -1,0 +1,377 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+	padding: 0;
+	margin: 0;
+}
+body {
+	background: #ff0000; /* Fallback for older browsers */
+	background: -webkit-linear-gradient(
+		to right,
+		#2e1515,
+		#0a0a30
+	); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(
+		to right,
+		#110b0b,
+		#0f0f13
+	); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+* {
+	font-family: 'Montserrat', sans-serif;
+	scroll-behavior: smooth;
+	/* cursor: none; */
+}
+
+.sidebar-container a {
+	color: white;
+	transform: rotate(270deg);
+	flex-grow: 1;
+	flex-basis: 0;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	letter-spacing: 0.2rem;
+	font-weight: 500;
+	font-size: 9px;
+	text-transform: uppercase;
+	color: #777676;
+	transition: all 0.5s ease-in;
+	cursor: pointer;
+}
+
+input:hover + input::after {
+	width: 100% !important;
+}
+
+.equalizer {
+	width: 40px;
+	height: 70px;
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+	position: fixed;
+	margin-top: -55px;
+	cursor: pointer;
+}
+
+.bar {
+	background-color: white;
+	width: 4px;
+	height: 0;
+	transition: all 0.5 ease;
+}
+.no-bar {
+	background-color: white;
+	width: 4px;
+	height: 5px;
+	transition: all 0.5 ease;
+}
+.bar:nth-child(1) {
+	animation: bnce 0.7s 0.1s infinite alternate;
+}
+@keyframes bnce {
+	30% {
+		height: 10px;
+	}
+	60% {
+		height: 20px;
+	}
+	100% {
+		height: 20px;
+	}
+}
+.bar:nth-child(2) {
+	animation: bnce2 0.5s 0.5s infinite alternate;
+}
+@keyframes bnce2 {
+	20% {
+		height: 15px;
+	}
+	40% {
+		height: 10px;
+	}
+	100% {
+		height: 20px;
+	}
+}
+.bar:nth-child(3) {
+	animation: bnce3 0.8s 0.3s infinite alternate;
+}
+@keyframes bnce3 {
+	80% {
+		height: 20px;
+	}
+	100% {
+	}
+}
+.bar:nth-child(4) {
+	animation: bnce4 0.6s 0.7s infinite alternate;
+}
+@keyframes bnce4 {
+	70% {
+		height: 15px;
+	}
+	100% {
+	}
+}
+.bar:nth-child(5) {
+	animation: bnce5 0.5s 0.2s infinite alternate;
+}
+@keyframes bnce5 {
+	60% {
+		height: 20px;
+	}
+	100% {
+	}
+}
+
+.cursor {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 16px;
+	height: 16px;
+	border-radius: 100%;
+	transition: height 0.5s ease;
+	transition: width 0.5s ease;
+	transition: background-color 0.5s ease;
+	pointer-events: none;
+	z-index: 161;
+}
+
+.cursorHoverText {
+	width: 55px;
+	height: 55px;
+	transition: background-color 0.5s ease;
+	/* mix-blend-mode: difference;*/
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: height 0.5s ease-out;
+	transition: width 0.5s ease-out;
+}
+.cursorHoverText::after,
+.cursorHoverText::before {
+	content: '';
+	position: absolute;
+	width: 30%;
+	height: 2px;
+	background-color: rgb(255, 255, 255);
+}
+.cursorHoverText::before {
+	transform: rotate(45deg);
+}
+.cursorHoverText::after {
+	transform: rotate(-45deg);
+}
+
+.cursorHover {
+	width: 12px;
+	height: 12px;
+	background-color: white;
+	transition: height 0.5s ease;
+	transition: width 0.5s ease;
+	transition: background-color 0.5s ease;
+}
+
+.salaName:hover + .cursor {
+	background-color: rebeccapurple;
+}
+
+.arrow-container {
+	position: absolute;
+	bottom: 15px;
+	width: 50px;
+	height: 50px;
+	transform: translate(-50%, -50%) rotateZ(90deg);
+}
+.arrow2 {
+	transform: translate(-50%, -50%) rotateZ(270deg);
+}
+.arrow-container:hover .arrow {
+	top: 50%;
+}
+.arrow-container:hover .arrow:before {
+	transform: translate(-50%, -50%) rotateZ(-30deg);
+}
+.arrow-container:hover .arrow:after {
+	transform: translate(-50%, -50%) rotateZ(30deg);
+}
+.arrow {
+	position: absolute;
+	left: 50%;
+	transition: all 0.4s ease;
+}
+.arrow:before,
+.arrow:after {
+	transition: all 0.4s ease;
+	content: '';
+	display: block;
+	position: absolute;
+	transform-origin: bottom right;
+	background: #fff;
+	width: 4px;
+	height: 25px;
+	border-radius: 10px;
+	transform: translate(-50%, -50%) rotateZ(-45deg);
+}
+.arrow:after {
+	transform-origin: bottom left;
+	transform: translate(-50%, -50%) rotateZ(45deg);
+}
+.arrow:nth-child(1) {
+	opacity: 0.3;
+	top: 35%;
+}
+.arrow:nth-child(2) {
+	opacity: 0.6;
+	top: 55%;
+}
+.arrow:nth-child(3) {
+	opacity: 0.9;
+	top: 75%;
+}
+
+
+
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: #222;
+}
+.wrapper .swipe {
+    position: relative;
+    width: fit-content;
+}
+.wrapper .swipe::after {
+    display: block;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 100%;
+    width: 0%;
+    height: 100%;
+    background-color: #ff5858;
+    animation: swipe 1.5s ease-out 1s forwards ;
+}
+.wrapper .swipe--delay::after {
+    background-color: #fff;
+    animation-delay: 1.5s;
+}
+.wrapper h1 {
+    display: block;
+    color: #fff;
+    font-size: 72px;
+    line-height: 1;
+    font-weight: 900;
+    text-transform: uppercase;
+    padding: 15px 25px;
+    opacity: 0;
+    animation: fade 0.01s ease-out 1.75s forwards ;
+}
+.wrapper h3 {
+    display: block;
+    color: #fff;
+    font-size: 32px;
+    line-height: 1;
+    font-weight: 900;
+    text-transform: uppercase;
+    padding: 10px 15px;
+    opacity: 0;
+    animation: fade 0.01s ease-out 2.25s forwards;
+}
+@keyframes fade {
+    from {
+        opacity: 0;
+   }
+    to {
+        opacity: 1;
+   }
+}
+@keyframes swipe {
+    0% {
+        right: 100%;
+        left: 0;
+        width: 0%;
+   }
+    50% {
+        right: 0;
+        left: 0;
+        width: 100%;
+   }
+    100% {
+        right: 0;
+        left: 100%;
+        width: 0%;
+   }
+}
+
+
+
+
+.container-app::-webkit-scrollbar {
+  display: none;
+  
+}
+
+
+
+
+.images-wrap{
+	height: 100% !important;
+	width: 100% !important;
+}
+
+.react-slideshow-fadezoom-images-wrap{
+	height: 100%;
+}
+.react-slideshow-container .slider{
+	height: 100vh;
+}
+
+.react-slideshow-wrapper {
+	height: 100vh;
+}
+.react-slideshow-wrapper .images-wrap {
+	flex-wrap: nowrap !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,53 @@
+{
+  "name": "casino",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@react-spring/parallax": "^9.7.2",
+    "@react-spring/web": "^9.7.2",
+    "@tanstack/react-query": "^4.29.12",
+    "@tanstack/react-query-devtools": "^4.29.12",
+    "axios": "^1.4.0",
+    "framer-motion": "^10.12.11",
+    "gsap": "^3.11.5",
+    "hamburger-react": "^2.5.0",
+    "locomotive-scroll": "^4.1.4",
+    "mapbox-gl": "^2.14.1",
+    "react": "^18.2.0",
+    "react-device-detect": "^2.2.3",
+    "react-dom": "^18.2.0",
+    "react-horizontal-scrolling-menu": "^4.0.4",
+    "react-loading-skeleton": "^3.3.1",
+    "react-locomotive-scroll": "^0.2.2",
+    "react-perfect-scrollbar": "^1.5.8",
+    "react-scroll-parallax": "^3.4.2",
+    "react-slideshow-image": "^4.2.1",
+    "smooth-scrollbar": "^8.8.3",
+    "use-smooth-horizontal-scroll": "^0.7.0",
+    "zustand": "^4.3.8"
+  },
+  "devDependencies": {
+    "@types/mapbox-gl": "^2.7.11",
+    "@types/react": "^18.0.28",
+    "@types/react-dom": "^18.0.11",
+    "@types/react-scroll": "^1.8.7",
+    "@typescript-eslint/eslint-plugin": "^5.57.1",
+    "@typescript-eslint/parser": "^5.57.1",
+    "@vitejs/plugin-react": "^4.0.0",
+    "autoprefixer": "^10.4.14",
+    "eslint": "^8.38.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.3.4",
+    "postcss": "^8.4.23",
+    "tailwindcss": "^3.3.2",
+    "typescript": "^5.0.2",
+    "vite": "^4.3.2"
+  }
+}
